@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Baloo_2, Nunito } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const baloo = Baloo_2({
   variable: "--font-baloo",
@@ -30,7 +32,9 @@ export default function RootLayout({
       <body
         className={`${baloo.variable} ${nunito.variable} antialiased bg-[#FFEFCB] text-[#0C1D32] font-sans`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

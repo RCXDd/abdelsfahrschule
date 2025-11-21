@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Heart, Shield, Smile, Phone, MapPin, Menu, X } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { ArrowRight, Heart, Shield, Smile, Phone, MapPin } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import SmoothScroll from "@/components/ui/SmoothScroll";
@@ -15,7 +15,6 @@ function cn(...inputs: ClassValue[]) {
 }
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showRuuuhig, setShowRuuuhig] = useState(false);
   const containerRef = useRef(null);
 
@@ -60,45 +59,6 @@ export default function Home() {
       <div ref={containerRef} className="min-h-screen flex flex-col font-sans selection:bg-accent-yellow selection:text-primary bg-creme">
         <div className="bg-noise fixed inset-0 z-50 pointer-events-none" />
 
-        {/* Navigation */}
-        <nav className="fixed top-0 w-full z-40 px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group z-50">
-            <Image src="/logo/logo-transparent.png" alt="Abdels Fahrschule" width={120} height={40} className="transition-transform duration-300 hover:scale-105" />
-          </Link>
-
-          <div className="hidden md:flex items-center gap-2 glass-premium p-1.5 rounded-full shadow-elevation-medium">
-            <NavLink href="#philosophie">Philosophie</NavLink>
-            <NavLink href="#ablauf">Ablauf</NavLink>
-            <NavLink href="#preise">Preise</NavLink>
-            <Link
-              href="#kontakt"
-              className="bg-primary text-white px-6 py-2.5 rounded-full font-bold hover:bg-accent-brown transition-premium hover:shadow-glow hover:-translate-y-0.5 shine"
-            >
-              Starten
-            </Link>
-          </div>
-
-          <button
-            className="md:hidden text-primary p-2 z-50 mix-blend-normal"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </nav>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="fixed inset-0 bg-creme z-30 flex flex-col items-center justify-center gap-8 text-3xl font-display font-bold text-primary"
-          >
-            <Link onClick={() => setIsMenuOpen(false)} href="#philosophie">Philosophie</Link>
-            <Link onClick={() => setIsMenuOpen(false)} href="#ablauf">Ablauf</Link>
-            <Link onClick={() => setIsMenuOpen(false)} href="#preise">Preise</Link>
-            <Link onClick={() => setIsMenuOpen(false)} href="#kontakt">Kontakt</Link>
-          </motion.div>
-        )}
 
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
@@ -423,33 +383,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="bg-primary text-white py-12 border-t border-white/10">
-          <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-3">
-              <span className="font-display font-bold text-2xl">ABDELS.</span>
-            </div>
-            <div className="flex gap-8 text-sm text-blue-200 font-medium">
-              <Link href="#" className="hover:text-white transition-colors">Impressum</Link>
-              <Link href="#" className="hover:text-white transition-colors">Datenschutz</Link>
-            </div>
-            <p className="text-sm text-blue-300">
-              Made with ❤️ in Düsseldorf
-            </p>
-          </div>
-        </footer>
       </div>
     </SmoothScroll>
   );
 }
 
-function NavLink({ href, children }: { href: string, children: React.ReactNode }) {
-  return (
-    <Link href={href} className="px-5 py-2 font-bold text-primary hover:text-accent-brown transition-colors text-sm uppercase tracking-wide">
-      {children}
-    </Link>
-  );
-}
 
 function ProcessItem({ step, title, desc, align }: { step: string, title: string, desc: string, align: "left" | "right" }) {
   return (
