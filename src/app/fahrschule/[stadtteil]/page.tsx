@@ -63,12 +63,12 @@ function generateSchema(stadtteil: { name: string; slug: string; plz: string[] }
     name: `Abdels Fahrschule`,
     description: `Fahrschule für ${stadtteil.name} und Düsseldorf. Führerschein Klasse B mit entspannter Atmosphäre und hoher Erfolgsquote. Standort in Ratingen.`,
     url: `https://abdelsfahrschule.de/fahrschule-duesseldorf-${stadtteil.slug}`,
-    telephone: "+49 2102 XXXXXXX",
+    telephone: "+49 176 70714319",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Musterstraße 1",
+      streetAddress: "Berliner Platz 12",
       addressLocality: "Ratingen",
-      postalCode: "40878",
+      postalCode: "40880",
       addressCountry: "DE",
     },
     geo: {

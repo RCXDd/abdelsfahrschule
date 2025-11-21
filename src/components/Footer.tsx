@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { stadtteile } from "@/data/stadtteile";
 
 export default function Footer() {
@@ -34,11 +34,13 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+49211XXXXXXX"
+                  href="https://wa.me/4917670714319"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-accent-yellow transition-colors"
                 >
-                  <Phone className="w-5 h-5" />
-                  <span>0211 XXX XXXX</span>
+                  <MessageCircle className="w-5 h-5" />
+                  <span>+49 176 70714319</span>
                 </a>
               </li>
               <li>
@@ -53,9 +55,9 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                 <span>
-                  Musterstraße 1
+                  Berliner Platz 12
                   <br />
-                  40XXX Düsseldorf
+                  40880 Ratingen
                 </span>
               </li>
             </ul>

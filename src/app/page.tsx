@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Heart, Shield, Smile, Phone, MapPin, Euro } from "lucide-react";
+import { ArrowRight, Heart, Shield, Smile, MessageCircle, MapPin, Euro } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -124,7 +124,7 @@ export default function Home() {
               className="mt-12"
             >
               <Link href="#kontakt" className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white bg-primary font-display rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50 transition-premium hover:bg-accent-brown hover:-translate-y-1 shadow-elevation-high hover:shadow-glow shine">
-                <span className="mr-3 text-lg">Kostenlosen Rückruf sichern</span>
+                <span className="mr-3 text-lg">Jetzt starten</span>
                 <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
             </motion.div>
@@ -399,19 +399,19 @@ export default function Home() {
                   <span className="text-gradient-gold italic">Next Step zum Führerschein?</span>
                 </h2>
                 <div className="space-y-6 relative z-10">
-                  <a href="tel:+49123456789" className="flex items-center gap-5 text-xl font-bold text-primary hover:text-accent-brown transition-premium group">
+                  <a href="https://wa.me/4917670714319" target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 text-xl font-bold text-primary hover:text-accent-brown transition-premium group">
                     <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-elevation-medium group-hover:shadow-glow group-hover:scale-105 transition-premium">
-                      <Phone size={22} />
+                      <MessageCircle size={22} />
                     </div>
-                    0123 456 789
+                    +49 176 70714319
                   </a>
                   <div className="flex items-center gap-5 text-xl font-bold text-primary">
                     <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-elevation-medium">
                       <MapPin size={22} />
                     </div>
                     <div>
-                      <p>Musterstraße 1</p>
-                      <p className="text-base font-normal text-secondary-blue">40210 Düsseldorf</p>
+                      <p>Berliner Platz 12</p>
+                      <p className="text-base font-normal text-secondary-blue">40880 Ratingen</p>
                     </div>
                   </div>
                 </div>
@@ -419,28 +419,25 @@ export default function Home() {
 
               <div className="p-12 md:p-20 bg-white flex flex-col justify-center relative">
                 <div className="absolute inset-0 opacity-20 grid-overlay pointer-events-none" />
-                <div className="relative z-10">
-                <form className="space-y-8">
-                  <div className="space-y-3">
-                    <label className="text-xs font-bold text-primary uppercase tracking-widest">Name</label>
-                    <input
-                      type="text"
-                      className="w-full bg-off-white/70 border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium shadow-elevation-low"
-                      placeholder="Wie dürfen wir dich anrufen?"
-                    />
+                <div className="relative z-10 text-center">
+                  <div className="w-20 h-20 bg-green-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <MessageCircle className="w-10 h-10 text-green-600" />
                   </div>
-                  <div className="space-y-3">
-                    <label className="text-xs font-bold text-primary uppercase tracking-widest">Telefon</label>
-                    <input
-                      type="tel"
-                      className="w-full bg-off-white/70 border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium shadow-elevation-low"
-                      placeholder="Deine Nummer für den Rückruf"
-                    />
-                  </div>
-                  <button className="w-full bg-primary text-white font-bold py-5 rounded-2xl transition-premium hover:bg-accent-brown hover:-translate-y-1 shadow-elevation-high hover:shadow-glow mt-4 text-lg flex items-center justify-center gap-3 shine">
-                    Kostenlosen Rückruf anfordern <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </form>
+                  <h3 className="font-display text-2xl font-bold text-primary mb-4">
+                    Schreib uns auf WhatsApp
+                  </h3>
+                  <p className="text-secondary-blue mb-8">
+                    Stelle deine Fragen direkt per WhatsApp – wir antworten schnell und unkompliziert.
+                  </p>
+                  <a
+                    href="https://wa.me/4917670714319"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-green-500 text-white font-bold py-5 rounded-2xl transition-premium hover:bg-green-600 hover:-translate-y-1 shadow-elevation-high hover:shadow-glow mt-4 text-lg flex items-center justify-center gap-3 shine"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    WhatsApp öffnen
+                  </a>
                 </div>
               </div>
             </motion.div>
