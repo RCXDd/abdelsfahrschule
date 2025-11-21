@@ -139,11 +139,11 @@ export default function Home() {
                     animate={showRuuuhig ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ delay: showRuuuhig ? 0.65 : 0, duration: 0.3 }}
                   >
-                    HIG
+                    HIG.
                   </motion.span>
                 </span>
                 <br />
-                UND ENTSPANNT.
+                MACH DEINEN FÜHRERSCHEIN.
               </h1>
             </motion.div>
 
@@ -153,8 +153,8 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 1 }}
               className="text-xl md:text-2xl text-secondary-blue max-w-xl mx-auto font-medium"
             >
-              Deine Premium-Fahrschule in Düsseldorf. <br />
-              Kein Stress. Keine Hektik. Einfach fahren.
+              Führerschein in Düsseldorf – auch wenn du Prüfungsangst hast oder dein Deutsch noch nicht perfekt ist. <br />
+              Klare Struktur, geduldige Fahrlehrer, keine versteckten Kosten.
             </motion.p>
 
             <motion.div
@@ -164,7 +164,7 @@ export default function Home() {
               className="mt-12"
             >
               <Link href="#kontakt" className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white bg-primary font-display rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50 transition-premium hover:bg-accent-brown hover:-translate-y-1 shadow-elevation-high hover:shadow-glow shine">
-                <span className="mr-3 text-lg">Probestunde buchen</span>
+                <span className="mr-3 text-lg">Kostenlosen Rückruf sichern</span>
                 <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
             </motion.div>
@@ -231,12 +231,13 @@ export default function Home() {
                       <Heart className="text-accent-yellow w-7 h-7" />
                     </div>
                     <h2 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                      Angstfrei <br />
-                      <span className="text-gradient-gold">zum Führerschein.</span>
+                      Führerschein ohne Stress <br />
+                      <span className="text-gradient-gold">auch wenn du Angst hast.</span>
                     </h2>
                   </div>
                   <p className="text-xl text-white/80 max-w-md leading-relaxed">
-                    Wir wissen, dass der Anfang schwer sein kann. Deshalb ist unsere oberste Regel: Geduld. Wir schreien nicht, wir erklären.
+                    Viele unserer Schüler haben schon Prüfungen versemmelt oder sprechen kein perfektes Deutsch.
+                    Deshalb ist unsere oberste Regel: Geduld. Wir schreien nicht, wir erklären – Schritt für Schritt, in einfachem Deutsch und bei Bedarf mehrsprachig.
                   </p>
                 </div>
                 <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-accent-brown/30 rounded-full blur-[120px] group-hover:bg-accent-brown/40 transition-all duration-1000" />
@@ -253,7 +254,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-display text-2xl font-bold text-primary mb-2">Sicherheit</h3>
-                  <p className="text-secondary-blue leading-relaxed">Modernste Fahrzeuge und Assistenzsysteme für deine Sicherheit.</p>
+                  <p className="text-secondary-blue leading-relaxed">
+                    Du lernst auf modernen Fahrzeugen, wir zeigen dir typische Prüfersituationen und die
+                    häufigsten Fehler – damit du in der Prüfung nicht überrascht wirst.
+                  </p>
                 </div>
               </motion.div>
 
@@ -267,7 +271,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-display text-2xl font-bold text-primary mb-2">Good Vibes Only</h3>
-                  <p className="text-primary/80 leading-relaxed">Lernen macht nur Spaß, wenn die Chemie stimmt.</p>
+                  <p className="text-primary/80 leading-relaxed">
+                    Keiner schreit, keiner lacht dich aus. Wir behandeln dich mit Respekt – egal, wie alt du bist,
+                    woher du kommst oder wie gut dein Deutsch ist.
+                  </p>
                 </div>
               </motion.div>
 
@@ -282,8 +289,8 @@ export default function Home() {
                   <h3 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-6">"Hi, ich bin Abdel."</h3>
                   <p className="text-lg text-secondary-blue mb-8 leading-relaxed">
                     Ich bin nicht der typische strenge Fahrlehrer, den du vielleicht aus Erzählungen kennst.
-                    Ich bin hier, um dir das Fahren beizubringen – auf Augenhöhe, mit Respekt und einer ordentlichen Portion Humor.
-                    In Düsseldorf kennt man mich als den entspanntesten Beifahrer der Stadt.
+                    Viele meiner Schüler kommen aus verschiedenen Ländern, sprechen nicht perfekt Deutsch oder sind schon 1–2 Mal durchgefallen.
+                    Meine Aufgabe ist es, dich sicher durch Theorie und Praxis zu bringen – mit Respekt, Humor, einem klaren Plan und Erklärungen, die du wirklich verstehst.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <div className="bg-gradient-to-r from-accent-yellow/60 to-accent-yellow/30 px-5 py-2.5 rounded-full font-bold text-primary text-sm shadow-elevation-low border border-accent-yellow/20">#DüsseldorfOriginal</div>
@@ -315,8 +322,10 @@ export default function Home() {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-24">
-              <h2 className="font-display text-5xl md:text-7xl font-bold mb-6">Dein Weg zum Lappen</h2>
-              <p className="text-xl text-blue-200">In 3 einfachen Schritten auf die Straße.</p>
+              <h2 className="font-display text-5xl md:text-7xl font-bold mb-6">Dein Weg zum Führerschein</h2>
+              <p className="text-xl text-blue-200">
+                In 3 klaren Schritten – von der Anmeldung bis zur bestandenen Prüfung.
+              </p>
             </div>
 
             <div className="relative max-w-4xl mx-auto">
@@ -326,19 +335,19 @@ export default function Home() {
               <ProcessItem
                 step="01"
                 title="Anmeldung & Basics"
-                desc="Komm vorbei, wir trinken einen Kaffee und regeln den Papierkram. App-Zugang inklusive."
+                desc="Wir klären gemeinsam deine Situation, helfen dir beim Papierkram und richten deine Lern-App ein – damit du sofort weißt, was als Nächstes kommt."
                 align="left"
               />
               <ProcessItem
                 step="02"
-                title="Theorie & Praxis"
-                desc="Du lernst in deinem Tempo. Theorie bequem per App, Praxis entspannt im Auto."
+                title="Theorie & Praxis – verständlich"
+                desc="Du lernst mit App und im Unterricht – in einfachem Deutsch und bei Bedarf mehrsprachig. In der Praxis fahren wir die typischen Prüfungsstrecken und üben genau die Situationen, die dir Angst machen."
                 align="right"
               />
               <ProcessItem
                 step="03"
                 title="Prüfung & Freiheit"
-                desc="Wir bereiten dich so gut vor, dass die Prüfung ein Spaziergang wird. Gute Fahrt!"
+                desc="Wenn du bereit bist, sagen wir es dir ehrlich. Wir gehen mit dir alle Prüfpunkte durch, bis du dich sicher fühlst – damit du mit einem guten Gefühl in die Prüfung gehst und mit Führerschein wieder rauskommst."
                 align="left"
               />
             </div>
@@ -362,8 +371,8 @@ export default function Home() {
                 <div className="absolute top-10 left-10 w-32 h-32 bg-accent-yellow rounded-full blur-[60px] opacity-40" />
                 <div className="absolute bottom-10 right-10 w-24 h-24 bg-accent-brown rounded-full blur-[50px] opacity-20" />
                 <h2 className="font-display text-5xl font-bold text-primary mb-8 relative z-10">
-                  Lust auf eine <br />
-                  <span className="text-gradient-gold italic">Probestunde?</span>
+                  Bereit für deinen <br />
+                  <span className="text-gradient-gold italic">Next Step zum Führerschein?</span>
                 </h2>
                 <div className="space-y-6 relative z-10">
                   <a href="tel:+49123456789" className="flex items-center gap-5 text-xl font-bold text-primary hover:text-accent-brown transition-premium group">
@@ -390,14 +399,22 @@ export default function Home() {
                 <form className="space-y-8">
                   <div className="space-y-3">
                     <label className="text-xs font-bold text-primary uppercase tracking-widest">Name</label>
-                    <input type="text" className="w-full bg-off-white/70 border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium shadow-elevation-low" placeholder="Dein Name" />
+                    <input
+                      type="text"
+                      className="w-full bg-off-white/70 border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium shadow-elevation-low"
+                      placeholder="Wie dürfen wir dich anrufen?"
+                    />
                   </div>
                   <div className="space-y-3">
                     <label className="text-xs font-bold text-primary uppercase tracking-widest">Telefon</label>
-                    <input type="tel" className="w-full bg-off-white/70 border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium shadow-elevation-low" placeholder="Deine Nummer" />
+                    <input
+                      type="tel"
+                      className="w-full bg-off-white/70 border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium shadow-elevation-low"
+                      placeholder="Deine Nummer für den Rückruf"
+                    />
                   </div>
                   <button className="w-full bg-primary text-white font-bold py-5 rounded-2xl transition-premium hover:bg-accent-brown hover:-translate-y-1 shadow-elevation-high hover:shadow-glow mt-4 text-lg flex items-center justify-center gap-3 shine">
-                    Rückruf anfordern <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                    Kostenlosen Rückruf anfordern <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </form>
                 </div>

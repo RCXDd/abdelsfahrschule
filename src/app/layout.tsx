@@ -15,8 +15,9 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Abdels Fahrschule - Bleib ruuuhig und entspannt",
-  description: "Deine Fahrschule für eine ruhige, geduldige und kompetente Ausbildung. Keine Hektik, kein Stress.",
+  title: "Abdels Fahrschule Düsseldorf – Führerschein ohne Stress, auch wenn dein Deutsch noch nicht perfekt ist",
+  description:
+    "Führerschein in Düsseldorf – mit geduldigen Fahrlehrern, klarer Struktur und mehrsprachiger Unterstützung. Ideal, wenn du Prüfungsangst hast, schon durchgefallen bist oder Deutsch nicht deine erste Sprache ist.",
 };
 
 export default function RootLayout({
