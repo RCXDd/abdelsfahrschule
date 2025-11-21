@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Heart, Shield, Smile, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Heart, Shield, Smile, Phone, MapPin, Euro } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -311,6 +311,70 @@ export default function Home() {
                 align="left"
               />
             </div>
+          </div>
+        </section>
+
+        {/* Preise Section */}
+        <section id="preise" className="relative py-32 px-6 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-creme via-white to-accent-yellow/20" />
+          <div className="absolute top-[-5%] right-[5%] w-[420px] h-[420px] spotlight" />
+          <div className="absolute left-[-5%] bottom-[10%] w-[360px] h-[360px] orb" />
+
+          <div className="container mx-auto max-w-4xl relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="text-center mb-16"
+            >
+              <h2 className="font-display text-5xl md:text-7xl font-bold text-primary mb-6">
+                Unsere <span className="text-gradient-gold">Preise</span>
+              </h2>
+              <p className="text-xl text-secondary-blue">
+                Transparent und fair – keine versteckten Kosten.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              className="bg-white/80 backdrop-blur-xl rounded-[2rem] p-10 md:p-12 shadow-elevation-high border-ambient"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-14 h-14 bg-accent-brown/20 rounded-2xl flex items-center justify-center">
+                  <Euro className="w-7 h-7 text-accent-brown" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-primary">
+                  Führerschein Klasse B
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { label: "Fahrstunde (45 min)", price: "62€" },
+                  { label: "Sonderfahrten", price: "62€" },
+                  { label: "Vorstellung zur Theorieprüfung", price: "0€" },
+                  { label: "Vorstellung zur praktischen Prüfung", price: "199€" },
+                  { label: "Lehrmaterial", price: "55€" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex justify-between items-center py-4 border-b border-gray-100 last:border-0"
+                  >
+                    <span className="text-secondary-blue">{item.label}</span>
+                    <span className="font-bold text-primary text-lg">{item.price}</span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-sm text-secondary-blue mt-8 p-4 bg-accent-yellow/10 rounded-xl">
+                Die Gesamtkosten hängen von der Anzahl der benötigten Fahrstunden ab.
+                Kontaktiere uns für eine persönliche Beratung!
+              </p>
+            </motion.div>
           </div>
         </section>
 
