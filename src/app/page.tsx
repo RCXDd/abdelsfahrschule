@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Heart, Shield, Smile, Phone, MapPin, Clock, Menu, X, Star, Car, Navigation } from "lucide-react";
+import { ArrowRight, Heart, Shield, Smile, Phone, MapPin, Menu, X } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -203,8 +203,13 @@ export default function Home() {
         <Marquee items={["Düsseldorf", "Gerresheim", "Flingern", "Grafenberg", "Pempelfort", "Derendorf"]} />
 
         {/* Intro / Philosophy - Bento Grid Style */}
-        <section id="philosophie" className="py-32 px-6">
-          <div className="container mx-auto">
+        <section id="philosophie" className="relative py-32 px-6 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-creme to-accent-yellow/15" />
+          <div className="absolute -left-10 top-10 w-80 h-80 orb" />
+          <div className="absolute right-[-10%] bottom-[-5%] w-[420px] h-[420px] spotlight" />
+          <div className="absolute inset-10 rounded-[48px] border border-primary/5 pointer-events-none" />
+
+          <div className="container mx-auto relative z-10">
             <motion.div
               variants={gridContainerVariants}
               initial="hidden"
@@ -216,9 +221,10 @@ export default function Home() {
               {/* Main Card */}
               <motion.div
                 variants={gridItemVariants}
-                className="md:col-span-2 md:row-span-2 bg-primary rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden text-white group shadow-elevation-high min-h-[400px] md:min-h-0"
+                className="md:col-span-2 md:row-span-2 bg-primary rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden text-white group shadow-elevation-high min-h-[400px] md:min-h-0 border-ambient"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/0 to-white/10" />
+                <div className="absolute inset-0 opacity-25 grid-overlay" />
                 <div className="relative z-10 h-full flex flex-col justify-between">
                   <div>
                     <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-md border border-white/10 shadow-glow-yellow">
@@ -240,7 +246,7 @@ export default function Home() {
               {/* Secondary Card 1 */}
               <motion.div
                 variants={gridItemVariants}
-                className="bg-gradient-to-br from-white to-creme/50 rounded-[2rem] p-8 border border-primary/5 flex flex-col justify-between group shadow-elevation-medium hover:shadow-elevation-high transition-premium hover:-translate-y-2 min-h-[200px] md:min-h-0"
+                className="bg-gradient-to-br from-white to-creme/50 rounded-[2rem] p-8 border border-primary/5 flex flex-col justify-between group shadow-elevation-medium hover:shadow-elevation-high transition-premium hover:-translate-y-2 min-h-[200px] md:min-h-0 border-ambient"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
                   <Shield className="w-6 h-6 text-primary" />
@@ -254,7 +260,7 @@ export default function Home() {
               {/* Secondary Card 2 */}
               <motion.div
                 variants={gridItemVariants}
-                className="bg-gradient-to-br from-accent-yellow/50 to-accent-brown/20 rounded-[2rem] p-8 flex flex-col justify-between group transition-premium hover:-translate-y-2 shadow-elevation-medium hover:shadow-glow-yellow min-h-[200px] md:min-h-0"
+                className="bg-gradient-to-br from-accent-yellow/50 to-accent-brown/20 rounded-[2rem] p-8 flex flex-col justify-between group transition-premium hover:-translate-y-2 shadow-elevation-medium hover:shadow-glow-yellow min-h-[200px] md:min-h-0 border-ambient"
               >
                 <div className="w-12 h-12 bg-white/80 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm shadow-sm group-hover:shadow-md transition-all duration-300">
                   <Smile className="w-6 h-6 text-accent-brown group-hover:rotate-12 transition-transform duration-300" />
@@ -268,9 +274,10 @@ export default function Home() {
               {/* Image Card / Abdel */}
               <motion.div
                 variants={gridItemVariants}
-                className="md:col-span-3 md:row-span-2 bg-white rounded-[2.5rem] p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative shadow-elevation-high"
+                className="md:col-span-3 md:row-span-2 bg-white rounded-[2.5rem] p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative shadow-elevation-high border-ambient"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-yellow/10 via-transparent to-accent-brown/5" />
+                <div className="absolute inset-4 rounded-[2rem] border border-primary/5" />
                 <div className="flex-1 relative z-10">
                   <h3 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-6">"Hi, ich bin Abdel."</h3>
                   <p className="text-lg text-secondary-blue mb-8 leading-relaxed">
@@ -299,7 +306,12 @@ export default function Home() {
 
         {/* Process Section - The "Roadmap" */}
         <section id="ablauf" className="py-32 bg-primary text-white relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10" />
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-primary via-[#0f2740] to-primary" />
+            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10" />
+            <div className="absolute left-[-10%] top-[10%] w-[420px] h-[420px] spotlight" />
+            <div className="absolute right-[-8%] bottom-[-5%] w-[360px] h-[360px] orb" />
+          </div>
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-24">
@@ -334,14 +346,17 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="kontakt" className="py-32 px-6">
-          <div className="container mx-auto max-w-6xl">
+        <section id="kontakt" className="relative py-32 px-6 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-creme via-white to-accent-yellow/20" />
+          <div className="absolute top-[-5%] right-[5%] w-[420px] h-[420px] spotlight" />
+          <div className="absolute left-[2%] bottom-[-5%] w-[360px] h-[360px] orb" />
+          <div className="container mx-auto max-w-6xl relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-white rounded-[3rem] overflow-hidden grid md:grid-cols-2 min-h-[600px] shadow-elevation-high"
+              className="bg-white/80 backdrop-blur-xl rounded-[3rem] overflow-hidden grid md:grid-cols-2 min-h-[620px] shadow-elevation-high border-ambient relative"
             >
               <div className="p-12 md:p-20 bg-gradient-to-br from-creme to-accent-yellow/20 flex flex-col justify-center relative">
                 <div className="absolute top-10 left-10 w-32 h-32 bg-accent-yellow rounded-full blur-[60px] opacity-40" />
@@ -369,20 +384,23 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="p-12 md:p-20 bg-white flex flex-col justify-center">
+              <div className="p-12 md:p-20 bg-white flex flex-col justify-center relative">
+                <div className="absolute inset-0 opacity-20 grid-overlay pointer-events-none" />
+                <div className="relative z-10">
                 <form className="space-y-8">
                   <div className="space-y-3">
                     <label className="text-xs font-bold text-primary uppercase tracking-widest">Name</label>
-                    <input type="text" className="w-full bg-off-white border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium" placeholder="Dein Name" />
+                    <input type="text" className="w-full bg-off-white/70 border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium shadow-elevation-low" placeholder="Dein Name" />
                   </div>
                   <div className="space-y-3">
                     <label className="text-xs font-bold text-primary uppercase tracking-widest">Telefon</label>
-                    <input type="tel" className="w-full bg-off-white border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium" placeholder="Deine Nummer" />
+                    <input type="tel" className="w-full bg-off-white/70 border-2 border-transparent rounded-xl p-4 focus:border-primary focus:bg-white outline-none transition-premium text-lg font-medium shadow-elevation-low" placeholder="Deine Nummer" />
                   </div>
                   <button className="w-full bg-primary text-white font-bold py-5 rounded-2xl transition-premium hover:bg-accent-brown hover:-translate-y-1 shadow-elevation-high hover:shadow-glow mt-4 text-lg flex items-center justify-center gap-3 shine">
                     Rückruf anfordern <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </form>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -426,9 +444,13 @@ function ProcessItem({ step, title, desc, align }: { step: string, title: string
       <div className="absolute left-[18px] md:left-1/2 top-0 w-4 h-4 bg-accent-yellow rounded-full border-4 border-primary -translate-x-1/2 z-20 shadow-[0_0_20px_rgba(252,227,171,0.5)]" />
 
       <div className="flex-1 pl-16 md:pl-0 md:w-1/2">
-        <div className={cn("bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors", align === "right" ? "md:mr-12" : "md:ml-12")}>
-          <h3 className="font-display text-2xl font-bold text-accent-yellow mb-3">{title}</h3>
-          <p className="text-blue-100 leading-relaxed">{desc}</p>
+        <div className={cn("glass-dark p-8 rounded-2xl border border-white/10 overflow-hidden relative shadow-elevation-medium hover:shadow-elevation-high transition-premium", align === "right" ? "md:mr-12" : "md:ml-12")}>
+          <div className="absolute inset-0 opacity-20 grid-overlay" />
+          <div className="absolute -right-10 -top-10 w-32 h-32 orb" />
+          <div className="relative">
+            <h3 className="font-display text-2xl font-bold text-accent-yellow mb-3">{title}</h3>
+            <p className="text-blue-100 leading-relaxed">{desc}</p>
+          </div>
         </div>
       </div>
     </div>

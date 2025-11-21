@@ -259,3 +259,66 @@ h6 {
 .shine:hover::after {
   transform: rotate(30deg) translateX(100%);
 }
+
+/* Immersive Layers */
+.canvas-aurora {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(252, 227, 171, 0.45), transparent 30%),
+    radial-gradient(circle at 70% 12%, rgba(199, 131, 86, 0.28), transparent 25%),
+    radial-gradient(circle at 78% 78%, rgba(77, 106, 120, 0.3), transparent 32%),
+    linear-gradient(145deg, rgba(255, 239, 203, 0.9), rgba(252, 227, 171, 0.7), rgba(12, 29, 50, 0.07));
+  filter: saturate(1.05);
+  animation: aurora-pan 26s ease-in-out infinite alternate;
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(12, 29, 50, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 29, 50, 0.06) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.9) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.spotlight {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.45), transparent 55%);
+  filter: blur(80px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.orb {
+  background: radial-gradient(circle at 30% 30%, rgba(252, 227, 171, 0.65), rgba(199, 131, 86, 0.15) 55%, transparent 60%);
+  filter: blur(40px);
+  opacity: 0.8;
+}
+
+.border-ambient {
+  position: relative;
+}
+
+.border-ambient::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(252, 227, 171, 0.8), rgba(199, 131, 86, 0.7), rgba(12, 29, 50, 0.25));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes aurora-pan {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-2%, 3%, 0);
+  }
+
+  100% {
+    transform: translate3d(2%, -3%, 0);
+  }
+}
